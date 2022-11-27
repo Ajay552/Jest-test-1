@@ -20,8 +20,4 @@ const googleSearch = (searchInput, db) => {
     return matches.length > 3 ? matches.slice(0, 3) : matches;
 }
 
-console.log(googleSearch("amazon", googleDatabase));
-console.log(googleSearch("youtube", googleDatabase));
-console.log(googleSearch("twitter", googleDatabase));
- 
 module.exports = googleSearch;

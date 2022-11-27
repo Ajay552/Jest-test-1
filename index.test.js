@@ -15,10 +15,25 @@ const mockDatabase = [
     "youtube.in",
 ];
 
-it("This is a silly test", () => {
-    expect("hello").toBe("hello");
-});
+describe("googleSearch Tests", () => {
 
-it("is google search", () => {
-    expect(googleSearch("youtube", mockDatabase)).toEqual(["youtube.com", "youtube.in"]);
+    it("This is a silly test", () => {
+        expect("hello").toBe("hello");
+    });
+
+    it("is google search", () => {
+        expect(googleSearch("nothing", mockDatabase)).toEqual([]);
+        expect(googleSearch("youtube", mockDatabase)).toEqual(["youtube.com", "youtube.in"]);
+        expect(googleSearch("google.in", mockDatabase)).toEqual(["google.in"]);
+    });
+
+    it("works with undefinded and null inputs", () => {
+        expect(googleSearch(undefined, mockDatabase)).toEqual([]);
+        expect(googleSearch(null, mockDatabase)).toEqual([]);
+    });
+
+    it("does not return more than 3 matches", () => {
+        expect(googleSearch("amazon", mockDatabase).length).toBe(3);
+    });
+
 })
