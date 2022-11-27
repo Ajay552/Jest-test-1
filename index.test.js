@@ -1,4 +1,4 @@
-const googleSearch = require("./index");
+import googleSearch from "./index";
 
 const mockDatabase = [
     "google.com",
